@@ -44,8 +44,8 @@
       <div class="carousel-inner">
         <div class="carousel-item active" style="background-image:url(./berge.jpeg);">
           <div class="container">
-            <h1 class="text-black">Winter Wunderland</h1>
-            <p class="text-black">Bei meinem Urlaub in den Schweizer Alpen konnte ich<br>die wunderschöne Alpinwelt erleben.</p>
+            <h1 class="text-white">Winter Wunderland</h1>
+            <p class="text-white">Bei meinem Urlaub in den Schweizer Alpen konnte ich<br>die wunderschöne Alpinwelt erleben.</p>
             <a href="#" class="btn btn-lg btn-info">Zum Beitrag</a>
           </div>
         </div>

@@ -7,6 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     </head>
     <body>
+        <!-- Header mit Navbar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5">
             <a href="#" class="navbar-brand mb-0 h1">
               <img class="d-inline-block align-top ml-3" src="Logo_sm.png" height="108" width="109" alt="Logo"/>
@@ -31,6 +32,7 @@
               </ul>
             </div>
           </nav>
+        <!-- Mainbereich mit Inhalten -->
         <div class="container vh-100">
             <div class="row justify-content-center h-100">
                 <div class="card ml-3 mr-3 my-auto shadow">

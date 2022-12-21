@@ -42,21 +42,21 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active" style="background-image:url(./berge.jpeg);">
+        <div class="carousel-item active" alt="Winter in den Bergen" style="background-image:url(./berge.jpeg);">
           <div class="container">
             <h1 class="text-white">Winter Wunderland</h1>
             <p class="text-white">Bei meinem Urlaub in den Schweizer Alpen konnte ich<br>die wunderschöne Alpinwelt erleben.</p>
             <a href="#" class="btn btn-lg btn-info">Zum Beitrag</a>
           </div>
         </div>
-        <div class="carousel-item" style="background-image:url(./polarlichter.jpeg);">
+        <div class="carousel-item" alt="Polarlichter" style="background-image:url(./polarlichter.jpeg);">
           <div class="container">
             <h1 class="text-white">Auf den Spuren der Polarlichter</h1>
             <p class="text-white">Im letzten November habe ich mich auf den Weg gemacht<br>die wunderschönen Polarlichter in Norwegen<br>zu besuchen.</p>
             <a href="#" class="btn btn-lg btn-info">Zum Beitrag</a>
           </div>
         </div>
-        <div class="carousel-item" style="background-image:url(./kueste.jpeg);">
+        <div class="carousel-item" alt="Strand im Winter" style="background-image:url(./kueste.jpeg);">
           <div class="container">
             <h1 class="text-black">Strandurlaub im Winter</h1>
             <p class="text-black">Richtig gelesen: Auch im Winter<br>kann so ein Urlaub am Meer wunderschön sein!<br>Wie bei meinem (Winter-)Urlaub in Island.</p>
@@ -65,6 +65,7 @@
         </div>
     </div>
     <h1 class="mb-5 mt-5 text-center">Willkommen auf meinem Blog!</h1>
+    
       <!-- Footer -->
         <?php
             include "footer.html";

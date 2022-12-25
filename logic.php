@@ -23,6 +23,34 @@
         exit();
     }
 
+    if(isset($_REQUEST['id'])) {
+        $id = $_REQUEST['id'];
 
+        $sql = "SELECT * FROM data WHERE id = $id";
+        $query = mysqli_query($conn, $sql);
+    }
 
+    //Bearbeiteten Titel und Text in der DB speichern (update)
+    if(isset($_REQUEST['update'])) {
+        $id = $_REQUEST['id'];
+        $title = $_REQUEST["title"];
+        $textcontent = $_REQUEST["textcontent"];
+
+        $sql = "UPDATE data SET title = '$title', textcontent = '$textcontent' WHERE id = $id";
+        mysqli_query($conn, $sql);
+
+        header("Location: uebersicht.php?info=updated");
+        exit();
+    }
+
+    //Blogbeitrag löschen
+    if(isset($_REQUEST['delete'])) {
+        $id = $_REQUEST['id'];
+
+        $sql = "DELETE * FROM data WHERE id = $id";
+        $query = mysqli_query($conn, $sql);
+
+        header("Location: uebersicht.php?info=deleted");
+        exit();
+    }
 ?>

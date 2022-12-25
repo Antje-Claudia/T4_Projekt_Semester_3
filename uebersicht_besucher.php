@@ -42,7 +42,7 @@
     <!-- Mainbereich mit Inhalten -->
     <div class="container mt-5">
         <?php foreach($query as $q) {?>
-            <div class="bg-dark p-5 rounded-lg text-white text-center">
+            <div class="bg-info p-5 rounded-lg text-white text-center">
                 <h1><?php echo $q['title'];?></h1>
             </div>
             <p class="mt-5 border-left border-dark pl-3"><?php echo $q['textcontent'];?></p>

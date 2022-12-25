@@ -70,10 +70,10 @@
     <h1 class="mb-5 mt-5 text-center">Willkommen auf meinem Blog!</h1>
     <?php foreach($query as $q) {?>
         <div class="col-12 d-flex justify-content-center align-items-center">
-          <div class="card text-black bg-light mt-5 card-border-info" style="width: 50%">
+          <div class="card text-black bg-light mt-5 card-border-info" style="width: 30%">
             <div class="card-body" >
               <h5 class="card-title"><?php echo $q['title'];?></h5>
-              <p class="card-text"><?php echo $q['textcontent'];?></p>
+              <p class="card-text" hidden><?php echo $q['textcontent'];?></p>
               <a href="uebersicht_besucher.php?id=<?php echo $q['id'];?>" class="btn btn-block btn-outline-info">Zum Beitrag <span class="text-danger">&rarr;</span></a>
             </div>
           </div>

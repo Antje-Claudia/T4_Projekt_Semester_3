@@ -14,6 +14,7 @@ services:
          - MARIADB_PASSWORD=password
     networks:
       - phpsite
+  
 #phpmyadmin localhost:8080
   phpmyadmin:
     image: phpmyadmin:latest
@@ -32,8 +33,9 @@ services:
     build: 
         context: .
         dockerfile: Dockerfile
+    restart: always
     image: php:8-apache-buster
-    container_name: php_t4
+    container_name: 20586abd5980_php_t4
     depends_on:
       - db
     volumes: ['./:/var/www/html']

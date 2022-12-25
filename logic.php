@@ -1,5 +1,7 @@
 <?php
+   
     //Verbindung zur DB wird aufgebaut.
+    session_start();
     $conn = new mysqli("db", "root", "rootpassword", "testDB");
 
     //Wenn die Verbindung zur DB nicht aufgebaut werden kann, wird eine Warnung ausgegeben.
@@ -7,6 +9,28 @@
         echo "<h3 class='container bg-dark text-center p-3 text-warning rounded-lg mt-5'> Verbindung zur Datenbank kann nicht hergestellt werden…</h3>";
     }
 
+    //Login:
+//https://www.youtube.com/watch?v=vESwDXV81F0
+    if(isset($_POST['login'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+    
+    $select = mysqli_query($conn, "SELECT * FROM login WHERE email = '$email' AND password = '$password'");
+    $row = mysqli_fetch_array($select);
+
+    if(is_array($row)) {
+        $_SESSION["email"] = $row ['email'];
+        $_SESSION["password"] = $row ['password'];
+    } else {
+        echo "<h3 class='container bg-dark text-center p-3 text-warning rounded-lg mt-5'>Die Eingabe war nicht korrekt.</h3>";
+    }
+    }
+    if(isset($_SESSION['email'])) {
+        header("Location: admin.php");
+    }
+
+    //_________________________________________________________________________________________________________________________
+     // Blog Posts anlegen, anzeigen, ändern und löschen (CRUD):
     $sql = "SELECT * FROM data";
     $query = mysqli_query($conn, $sql);
     

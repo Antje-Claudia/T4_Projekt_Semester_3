@@ -65,11 +65,11 @@
       <!-- For-each-Schleife mit dem Parameter $query (definiert in der logic.php) und dem Wert $q -->
       <?php foreach($query as $q) {?>
         <div class="col-4 d-flex justify-content-center align-items-center">
-          <div class="card text-white bg-dark mt-5">
+          <div class="card text-black bg-light mt-5">
             <div class="card-body" style="width: 18rem;">
               <h5 class="card-title"><?php echo $q['title'];?></h5>
               <p class="card-text"><?php echo $q['textcontent'];?></p>
-              <a href="view.php?id=<?php echo $q['id'];?>" class="btn btn-info">Mehr anzeigen<span class="text-danger">&rarr;</span></a>
+              <a href="view.php?id=<?php echo $q['id'];?>" class="btn btn-info">Mehr anzeigen <span class="text-danger">&rarr;</span></a>
             </div>
           </div>
         </div>

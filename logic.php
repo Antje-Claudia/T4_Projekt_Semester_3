@@ -47,7 +47,7 @@
     if(isset($_REQUEST['delete'])) {
         $id = $_REQUEST['id'];
 
-        $sql = "DELETE * FROM data WHERE id = $id";
+        $sql = "DELETE FROM data WHERE id = $id";
         $query = mysqli_query($conn, $sql);
 
         header("Location: uebersicht.php?info=deleted");

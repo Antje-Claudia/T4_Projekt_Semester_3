@@ -47,7 +47,16 @@
           <div class="alert alert-success" role="alert">
           Der Blog Post wurde erfolgreich angelegt und gespeichert.
         </div>
-        <?php }?>
+    <!-- Wenn ein Beitrag erfolgreich geändert wurde, wird eine Erfolgsmeldung ausgegeben-->
+        <?php } elseif($_REQUEST['info'] == "updated") {?>
+          <div class="alert alert-success" role="alert">
+            Die Änderungen wurden erfolgreich gespeichert.
+          </div>
+        <?php } elseif($_REQUEST['info'] == "deleted") {?>
+          <div class="alert alert-danger" role="alert">
+            Der Blogbeitrag wurde erfolgreich gelöscht.
+          </div>
+          <?php }?>
       <?php }?>
         <h1>Admin Bereich - Post Übersicht</h1>
         <p>Hier siehst du all deine gespeicherten Blogbeiträge.</p>
@@ -60,7 +69,7 @@
             <div class="card-body" style="width: 18rem;">
               <h5 class="card-title"><?php echo $q['title'];?></h5>
               <p class="card-text"><?php echo $q['textcontent'];?></p>
-              <a href="" class="btn btn-info">Mehr anzeigen<span class="text-danger">&rarr;</span></a>
+              <a href="view.php?id=<?php echo $q['id'];?>" class="btn btn-info">Mehr anzeigen<span class="text-danger">&rarr;</span></a>
             </div>
           </div>
         </div>

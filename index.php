@@ -1,3 +1,6 @@
+<?php
+  include "logic.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,26 +49,36 @@
           <div class="container">
             <h1 class="text-white">Winter Wunderland</h1>
             <p class="text-white">Bei meinem Urlaub in den Schweizer Alpen konnte ich<br>die wunderschöne Alpinwelt erleben.</p>
-            <a href="#" class="btn btn-lg btn-info">Zum Beitrag</a>
+            <a href="uebersicht_besucher.php?id=1" class="btn btn-lg btn-info">Zum Beitrag</a>
           </div>
         </div>
         <div class="carousel-item" alt="Polarlichter" style="background-image:url(./polarlichter.jpeg);">
           <div class="container">
             <h1 class="text-white">Auf den Spuren der Polarlichter</h1>
             <p class="text-white">Im letzten November habe ich mich auf den Weg gemacht<br>die wunderschönen Polarlichter in Norwegen<br>zu besuchen.</p>
-            <a href="#" class="btn btn-lg btn-info">Zum Beitrag</a>
+            <a href="uebersicht_besucher.php?id=3" class="btn btn-lg btn-info">Zum Beitrag</a>
           </div>
         </div>
         <div class="carousel-item" alt="Strand im Winter" style="background-image:url(./kueste.jpeg);">
           <div class="container">
             <h1 class="text-black">Strandurlaub im Winter</h1>
             <p class="text-black">Richtig gelesen: Auch im Winter<br>kann so ein Urlaub am Meer wunderschön sein!<br>Wie bei meinem (Winter-)Urlaub in Island.</p>
-            <a href="#" class="btn btn-lg btn-info">Zum Beitrag</a>
+            <a href="uebersicht_besucher.php?id=2" class="btn btn-lg btn-info">Zum Beitrag</a>
           </div>
         </div>
     </div>
     <h1 class="mb-5 mt-5 text-center">Willkommen auf meinem Blog!</h1>
-    
+    <?php foreach($query as $q) {?>
+        <div class="col-12 d-flex justify-content-center align-items-center">
+          <div class="card text-black bg-light mt-5 card-border-info" style="width: 50%">
+            <div class="card-body" >
+              <h5 class="card-title"><?php echo $q['title'];?></h5>
+              <p class="card-text"><?php echo $q['textcontent'];?></p>
+              <a href="uebersicht_besucher.php?id=<?php echo $q['id'];?>" class="btn btn-info">Zum Beitrag<span class="text-danger">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      <?php }?>
       <!-- Footer -->
         <?php
             include "footer.html";

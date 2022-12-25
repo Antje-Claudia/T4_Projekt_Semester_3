@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Neuer Blogbeitrag</title>
+    <title>Admin Bereich</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   </head>
   <body>
@@ -33,29 +33,43 @@
             <a href="login_fe.php" class="nav-link">Login</a>
           </li>
           <li class="nav-item active">
-            <a href="admin.php" class="nav-link">Admin Bereich</a>
+            <a href="admin.php" class="nav-link active">Admin Bereich</a>
           </li>
         </ul>
       </div>
     </nav>
 
     <!-- Mainbereich mit Inhalten -->
-    <div class="container mt-5 mb-5 ">
-        <form method="POST">
-            <input type="text" name="title" placeholder="Titel Blogbeitrag" class="form-control bg-dark text-white my-3 text-center">
-            <textarea class="form-control bg-dark text-white my-3" name="textcontent"></textarea>
-            <button class="btn btn-outline-info" name="new_entry">Beitrag hinzufügen</button>
-        </form>
+    <!-- Wenn ein Beitrag erfolgreich angelegt wurde, wird eine Erfolgsmeldung ausgegeben-->
+    <div class="text-center">
+      <?php if(isset($_REQUEST['info'])) {?>
+        <?php if($_REQUEST['info'] == "added") {?>
+          <div class="alert alert-success" role="alert">
+          Der Blog Post wurde erfolgreich angelegt und gespeichert.
+        </div>
+        <?php }?>
+      <?php }?>
+        <h1>Admin Bereich - Post Übersicht</h1>
+        <p>Hier siehst du all deine gespeicherten Blogbeiträge.</p>
     </div>
-
-
-
-
+    <div class="row">
+      <!-- For-each-Schleife mit dem Parameter $query (definiert in der logic.php) und dem Wert $q -->
+      <?php foreach($query as $q) {?>
+        <div class="col-4 d-flex justify-content-center align-items-center">
+          <div class="card text-white bg-dark mt-5">
+            <div class="card-body" style="width: 18rem;">
+              <h5 class="card-title"><?php echo $q['title'];?></h5>
+              <p class="card-text"><?php echo $q['textcontent'];?></p>
+              <a href="" class="btn btn-info">Mehr anzeigen<span class="text-danger">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      <?php }?>
+    </div>
     <!-- Footer -->
     <?php
             include "footer.html";
         ?>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>

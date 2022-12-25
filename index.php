@@ -74,7 +74,7 @@
             <div class="card-body" >
               <h5 class="card-title"><?php echo $q['title'];?></h5>
               <p class="card-text"><?php echo $q['textcontent'];?></p>
-              <a href="uebersicht_besucher.php?id=<?php echo $q['id'];?>" class="btn btn-info">Zum Beitrag<span class="text-danger">&rarr;</span></a>
+              <a href="uebersicht_besucher.php?id=<?php echo $q['id'];?>" class="btn btn-block btn-outline-info">Zum Beitrag <span class="text-danger">&rarr;</span></a>
             </div>
           </div>
         </div>

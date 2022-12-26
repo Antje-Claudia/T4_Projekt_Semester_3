@@ -1,7 +1,6 @@
 <?php
    
     //Verbindung zur DB wird aufgebaut.
-    session_start();
     $conn = new mysqli("db", "root", "rootpassword", "testDB");
 
     //Wenn die Verbindung zur DB nicht aufgebaut werden kann, wird eine Warnung ausgegeben.
@@ -19,14 +18,16 @@
     $row = mysqli_fetch_array($select);
 
     if(is_array($row)) {
-        $_SESSION["email"] = $row ['email'];
-        $_SESSION["password"] = $row ['password'];
+        $_REQUEST["email"] = $row ['email'];
+        $_REQUEST["password"] = $row ['password'];
     } else {
-        echo "<h3 class='container bg-dark text-center p-3 text-warning rounded-lg mt-5'>Die Eingabe war nicht korrekt.</h3>";
+        header("Location: login_fe.php?login=unsuccessfully");
+        exit();
     }
     }
-    if(isset($_SESSION['email'])) {
-        header("Location: admin.php");
+    if(isset($_REQUEST['email'])) {
+        header("Location: admin.php?login=successfully");
+        exit();
     }
 
     //_________________________________________________________________________________________________________________________

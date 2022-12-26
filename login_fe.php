@@ -33,6 +33,15 @@
             </div>
           </nav>
         <!-- Mainbereich mit Inhalten -->
+        <div class="text-center">
+          <?php if(isset($_REQUEST['login'])) {?>
+            <?php if($_REQUEST['login'] == "unsuccessfully") {?>
+              <div class="alert alert-danger" role="alert">
+              Der Login war nicht erfolgreich. Bitte versuche es erneut.
+            </div>
+            <?php }?>
+          <?php }?>
+        </div>
         <div class="container vh-100">
             <div class="row justify-content-center h-100">
                 <div class="card ml-3 mr-3 my-auto shadow">

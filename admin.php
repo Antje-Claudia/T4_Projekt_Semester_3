@@ -41,6 +41,13 @@
 
     <!-- Mainbereich mit Inhalten -->
     <div class="text-center">
+      <?php if(isset($_REQUEST['login'])) {?>
+        <?php if($_REQUEST['login'] == "successfully") {?>
+          <div class="alert alert-success" role="alert">
+          Der Login war erfolgreich. Du hast jetzt Zugriff zum Admin Bereich.
+        </div>
+        <?php }?>
+      <?php }?>
       <h1>Willkommen im Admin-Bereich</h1>
       <p>Hier kannst du neue Blogbeiträge verfassen, bestehende Blogbeiträge bearbeiten und löschen.</p>
       <div class="container mt-5 mb-5">

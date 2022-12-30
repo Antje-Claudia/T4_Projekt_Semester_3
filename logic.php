@@ -9,7 +9,6 @@
     }
 
     //Login:
-//https://www.youtube.com/watch?v=vESwDXV81F0
     if(isset($_POST['login'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];

@@ -32,9 +32,6 @@
           <li class="nav-item active">
             <a href="login_fe.php" class="nav-link">Login</a>
           </li>
-          <li class="nav-item active">
-            <a href="admin.php" class="nav-link active">Admin Bereich</a>
-          </li>
         </ul>
       </div>
     </nav>

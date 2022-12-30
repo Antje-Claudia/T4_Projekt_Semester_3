@@ -6,6 +6,7 @@ services:
     image: mariadb
     volumes:
       - ./data/db:/var/lib/mysql
+      - './import.sql:/docker-entrypoint-initdb.d/dump.sql'
     restart: always
     environment:
          - MARIADB_ROOT_PASSWORD=rootpassword

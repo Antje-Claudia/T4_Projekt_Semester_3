@@ -50,7 +50,7 @@
                         <h2>Login Bereich<h2>
                         </div>
                     <div class="card-body">
-                        <form action="logic.php" method="post"> <!-- Action führt dazu, dass login.php ausgeführt wird-->
+                        <form action="logic.php" method="post"> <!-- Action führt dazu, dass logic.php ausgeführt wird-->
                             <div class="form-group">
                                 <label>Email</label>
                                 <input type="email" id="email" class="form-control mb-3" name="email" placeholder="name@examplemail.com" required autofocus>
